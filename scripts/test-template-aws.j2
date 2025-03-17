@@ -347,6 +347,13 @@ steps:
     agents:
       queue: ibm-ppc64le
     command: bash .buildkite/run-cpu-test-ppc64le.sh
+  
+  - label: "IBM Z (s390x) CPU Test"
+    depends_on: ~
+    soft_fail: true
+    agents:
+      queue: ibm-s390x
+    command: bash .buildkite/run-cpu-test-s390x.sh
 
   {% if nightly == "1" %}
   - label: "GH200 Test"
